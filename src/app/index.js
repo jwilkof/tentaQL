@@ -1,15 +1,15 @@
-const React = require("react");
-const ReactDOM = require("react-dom");
-require("./index.css");
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from './components/App'
+import rootReducer from './reducers'
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello TentaQL - React</h1>
-      </div>
-    );
-  }
-}
+const store = createStore(rootReducer)
 
-ReactDOM.render(<App />, document.getElementById("app"));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
