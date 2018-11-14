@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 let nextTodoId = 0
 export const addTodo = text => ({
   type: 'ADD_TODO',
@@ -19,4 +21,8 @@ export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SHOW_ACTIVE: 'SHOW_ACTIVE'
+}
+
+export const uriFetch = dbURI => dispatch => {
+
 }
